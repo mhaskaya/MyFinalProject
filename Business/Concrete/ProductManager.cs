@@ -18,5 +18,15 @@ namespace Business.Concrete
         {
             return _produtDal.GetAll();
         }
+
+        public List<Product> GetAllByCategoryId(int Id)
+        {
+            return _produtDal.GetAll(p => p.CategoryId == Id);
+        }
+
+        public List<Product> GetByUnitPrice(decimal min, decimal max)
+        {
+            return _produtDal.GetAll(p => p.UnitPrice <= min && p.UnitPrice <= max);
+        }
     }
 }
