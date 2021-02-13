@@ -29,7 +29,7 @@ namespace ConsoleUI
             var result = productManager.GetProductDetails();
             if (result.Success==true)
             {
-                foreach (var product in result.GetData())
+                foreach (var product in result.Data)
                 {
                     Console.WriteLine(product.ProductName + "/" + product.CategoryName);
                 }
@@ -38,7 +38,7 @@ namespace ConsoleUI
             {
                 Console.WriteLine(result.Message);
             }
-            foreach (var product in productManager.GetProductDetails().GetData())
+            foreach (var product in productManager.GetProductDetails().Data)
             {
                 Console.WriteLine(product.ProductName + "/" + product.CategoryName);
             }

@@ -6,22 +6,15 @@ namespace Core.Utilities.Results
 {
     public class DataResult<T> : Result, IDataResult<T>
     {
-        public DataResult(T data,bool success,string message) :base (success,message)
+        public DataResult(T data, bool success, string message) : base(success, message)
         {
-            this.data = data;
-        }
-        public DataResult(T data, bool success):base(success)
-        {
-            this.data = data;
+            Data = data;
         }
 
-        private readonly T data;
-
-        public T GetData()
+        public DataResult(T data, bool success) : base(success)
         {
-            return data;
+            Data = data;
         }
-
         public T Data { get; }
     }
 }

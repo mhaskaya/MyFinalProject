@@ -6,6 +6,6 @@ namespace Core.Utilities.Results
 {
     public interface IDataResult<T> : IResult
     {
-        T GetData();
+        T Data { get; }
     }
 }
